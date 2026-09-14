@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#173f3a" />
+    <meta name="description" content="Ein einfacher, privater Workout-Tracker für zuhause." />
+    <title>Zuhause stark</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt</a>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Dein Workout für zuhause</p>
+        <h1>Zuhause stark.</h1>
+      </div>
+      <span class="privacy-pill" title="Daten bleiben in diesem Browser">lokal gespeichert</span>
+    </header>
+
+    <nav class="tabs" aria-label="Bereiche">
+      <button class="tab is-active" data-view="training" aria-controls="training-view">Training</button>
+      <button class="tab" data-view="history" aria-controls="history-view">Verlauf</button>
+    </nav>
+
+    <main id="main">
+      <section id="training-view" class="view" aria-labelledby="training-heading">
+        <h2 id="training-heading" class="sr-only">Training</h2>
+        <div id="training-root"></div>
+      </section>
+
+      <section id="history-view" class="view" aria-labelledby="history-heading" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Dranbleiben</p>
+            <h2 id="history-heading">Deine Einheiten</h2>
+          </div>
+          <span id="history-count" class="count-badge">0</span>
+        </div>
+        <div id="history-root"></div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
